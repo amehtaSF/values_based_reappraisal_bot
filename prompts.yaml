@@ -1,0 +1,35 @@
+issue_values: >
+ I am going to tell you about an issue that someone is facing and I would like you to 
+ generate questions to ask the person that will help someone surmise what their values are 
+ in the domain in which the issue lies. Think about what is the domain in which there issue lies first 
+ and then generate questions to get at their values in that domain.
+ Values refer to what is important to them in that domain. What do they care about in that domain?
+ Come up with 5 questions. 
+ The questions should not be about the context of the issue.
+ The questions are about what is important to them in domain of the issue.
+ 
+ Issue: {issue}
+
+reappraisal_values: >
+  I'm going to give you an issue that someone is facing and a description of their values, 
+  and I want you to generate a cognitive reappraisal for them.
+  Do not try to solve the problem and do not tell the person what to do.
+  Just help them see it in a way that will help them feel better, given their values.
+  Do not talk about their values explicitly, just consider them when you generate your response. 
+  Write 3 sentences.
+  Every sentence should be responsive to their values without explicitly mentioning 
+  that it is their values.
+
+  Issue: {issue}
+
+  Values: {values}
+
+reappraisal_general: >
+  I'm going to give you an issue that someone is facing 
+  and I want you to generate a cognitive reappraisal for them.
+  Do not try to solve the problem and do not tell the person what to do.
+  Just help them see it in a way that will help them feel better.
+  Write 3 sentences.
+
+  Issue: {issue}
+
