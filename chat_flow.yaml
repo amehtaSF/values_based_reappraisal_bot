@@ -1,90 +1,105 @@
-solicit_issue: 
-  asst_msg: >
-    Please think of an issue in your life that has been bothering you. This issue should be something that really matters to you and preferably **something that is an ongoing or recurring issue that may potentially continue to bother you in the future**. The issue could be something that is happening in the outside world, or it could be a mental or emotional pattern that is interfering with your life.  
-  
-    Some examples of relevant issues are:
+# top level key is the name of the step in the chat flow
+# within top level keys there can be: process_input, asst_msg, process_response, and direct_next
+solicit_issue:
+  speaker: 
+    asst_msg: >
+      Please think of an issue in your life that has been bothering you. This issue should be something that really matters to you and preferably **something that is an ongoing or recurring issue that may potentially continue to bother you in the future**. The issue could be something that is happening in the outside world, or it could be a mental or emotional pattern that is interfering with your life.  
+    
+      Some examples of relevant issues are:
 
-    *   a chronic illness of yours or of a loved one
-    *   a disagreement with someone (e.g. partner, friend, family member, neighbor, etc.) that has re-occurred or lasted more than one day
-    *   something you are dissatisfied with in your job
-    *   a trait about yourself you do not like (e.g. frequent procrastination)
-    *   a social or political issue which you care deeply about
-    *   an unwanted emotional pattern (e.g. outbursts of disproportionate anger)
+      *   a chronic illness of yours or of a loved one
+      *   a disagreement with someone (e.g. partner, friend, family member, neighbor, etc.) that has re-occurred or lasted more than one day
+      *   something you are dissatisfied with in your job
+      *   a trait about yourself you do not like (e.g. frequent procrastination)
+      *   a social or political issue which you care deeply about
+      *   an unwanted emotional pattern (e.g. outbursts of disproportionate anger)
 
-      
-    Your issue could be in any of the following domains.
+        
+      Your issue could be in any of the following domains.
 
-    *   **Family relations** \- related to your relationships with your family, besides marriage and parenting.
-    *   **Marriage/intimate relations** \- related to your important romantic or intimate relationships.
-    *   **Parenting** \- related to parenting.
-    *   **Friendships/social life** \- related to your friendships and other social relationships.
-    *   **Career/employment** \- related to your work.
-    *   **Finance** - related to financial troubles.
-    *   **Education/training** - related to your education or other special training like music or martial arts.
-    *   **Recreation/fun** \- including hobbies, sports, and leisure activities.
-    *   **Spirituality** \- relating to whatever spirituality means to you, whether it is as simple as communing with nature or as formal as participation in an organized religious group.
-    *   **Community life** \- relating to your community and any community service work.
-    *   **Health/physical self-care** \- related to maintaining your physical well‑being, health‑ related issues as sleep, diet, exercise, and illness.
-    *   **Environment/sustainability** \- related to caring for the planet, especially the natural environment.
-    *   **Social/political issues** - related to any social, political, or moral concerns pertaining to broader society.
-    *   **Personal growth** \- Related to areas of inner personal growth, such as emotional maturity, resilience, or self-control.
+      *   **Family relations** \- related to your relationships with your family, besides marriage and parenting.
+      *   **Marriage/intimate relations** \- related to your important romantic or intimate relationships.
+      *   **Parenting** \- related to parenting.
+      *   **Friendships/social life** \- related to your friendships and other social relationships.
+      *   **Career/employment** \- related to your work.
+      *   **Finance** - related to financial troubles.
+      *   **Education/training** - related to your education or other special training like music or martial arts.
+      *   **Recreation/fun** \- including hobbies, sports, and leisure activities.
+      *   **Spirituality** \- relating to whatever spirituality means to you, whether it is as simple as communing with nature or as formal as participation in an organized religious group.
+      *   **Community life** \- relating to your community and any community service work.
+      *   **Health/physical self-care** \- related to maintaining your physical well‑being, health‑ related issues as sleep, diet, exercise, and illness.
+      *   **Environment/sustainability** \- related to caring for the planet, especially the natural environment.
+      *   **Social/political issues** - related to any social, political, or moral concerns pertaining to broader society.
+      *   **Personal growth** \- Related to areas of inner personal growth, such as emotional maturity, resilience, or self-control.
 
-    Please write a few sentences about the issue directly in the text box below. Do not copy/paste anything into the text box.
+      Please write a few sentences about the issue directly in the text box below. Do not copy/paste anything into the text box.
 
 verify_issue:
-  temperature: 0.8
-  gpt: >
-    Look at the description of the issue the user described.
-    In any issue, there are often several separable facets that cause the negative emotion to arise. 
-    I want you to as concisely as possible, 
-    summarize what are the facets that give rise to the negative emotion. 
-    Each facet read on its own should indicate something negative.
-    
-    Format the output as a numbered list with phrases written in the second person and 
-    verify that each bullet point is something negative, 
-    when read on its own without the other list items. 
-    Make the list as short as possible without missing anything.
+  listener: 
+    temperature: .5
+    gpt: >
+      Look at the description of the issue the user described.
+      In any issue, there are often several separable facets that cause the negative emotion to arise. 
+      I want you to as concisely as possible, 
+      summarize what are the facets that give rise to the negative emotion. 
+      Each facet read on its own should indicate something negative.
+      
+      Format the output as a numbered list with phrases written in the second person and 
+      verify that each bullet point is something negative, 
+      when read on its own without the other list items. 
+      Make the list as short as possible without missing anything.
+      Do not invent any information the user did not provide.
+      Do not try to guess how the user feels unless they have explicitly stated it.
+      Do not try to guess any external circumstances unless they have been explicitly stated.
+      Only include the numbered list and nothing else.
 
-  asst_msg: >
-    {gpt_output}
+ 
+  
+  speaker:
+    temperature: .1
+    gpt: >
+      If the user has confirmed that the summary fully and correctly captures the issue in their final message, 
+      then return 1.
+      If the user has suggested a change or addition, then return 0.
+      Do not return anything except 1 or 0.
+    asst_msg: |
+      {gpt_output}
 
-    Does this fully and correctly capture the issue? Is there anything you would like to add or change?
-
-handle_verify_issue:
-  temperature: 0.1
-  gpt: >
-    If the user has confirmed that the summary fully and correctly captures the issue, then return 1.
-    If the user has suggested a change or addition, then return 0.
-    Do not return anything except 1 or 0.
-
+      Does this fully and correctly capture the issue? Is there anything you would like to add or change?
+        
 solicit_values:
-  on_success: offer_reappraisal
-  on_fail: 
-  temperature: 0.8
-  gpt: >
-    I am going to tell you about an issue that someone is facing and I would like you to 
-    generate questions to ask the person that will help someone surmise what their values are 
-    in the domain in which the issue lies. Think about what is the domain in which there issue lies first 
-    and then generate questions to get at their values in that domain.
-    Values refer to what is important to them in that domain. What do they care about in that domain?
-    Come up with 5 questions. 
-    The questions should not be about the context of the issue.
-    The questions are about what is important to them in domain of the issue.
-    Only write the questions and don't include any other text.
-    
-    Issue: {issue}
+  speaker:
+    temperature: 0.8
+    gpt: >
+      Read about the issue the user is facing and generate questions to ask the person
+      that will help surmise what are their values in the domain in which the issue lies. 
+      Think about what is the domain in which there issue lies first 
+      and then generate questions to get at their values in that domain.
+      Generate questions that are relatively broad and not just about the issue itself.
+      Values refer to what is important to them in that domain. 
+      By domain, we mean things like "work", "family", "finance", "health", etc.
+      What do they care about in that domain?
+      Come up with 3 to 5 questions. 
+      The questions should not be about the context of the issue.
+      The questions are about what is important to them in domain of the issue.
+      Only write the questions as a json list and don't include any other text.
 
 offer_reappraisal:
-  gpt: >
-    I'm going to give you an issue that someone is facing and a description of their values, 
-    and I want you to generate a cognitive reappraisal for them.
-    Do not try to solve the problem and do not tell the person what to do.
-    Just help them see it in a way that will help them feel better, given their values.
-    Do not talk about their values explicitly, just consider them when you generate your response. 
-    Write 3 sentences.
-    Every sentence should be responsive to their values without explicitly mentioning 
-    that it is their values.
+  speaker:
+    temperature: 0.8
+    gpt: >
+      Read this issue that someone is facing and the description of their values, 
+      and I want you to generate a cognitive reappraisal for them.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better, given their values.
+      Do not talk about their values explicitly, just consider them when you generate your response. 
+      Write 3 sentences.
+      Every sentence should be responsive to their values without explicitly mentioning 
+      that it is their values.
 
-    Issue: {issue}
+      Values: {user_values}
 
-    Values: {values}
+  
+
+
+  
