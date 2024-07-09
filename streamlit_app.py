@@ -79,7 +79,7 @@ if issue := st.chat_input(issue_question):
             {"role": "system", 
              "content": prompts["issue_values"].format(issue=issue)}
         ],
-        stream=True
+        stream=False
     )
 
 

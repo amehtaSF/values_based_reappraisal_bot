@@ -7,6 +7,7 @@ issue_values: >
  Come up with 5 questions. 
  The questions should not be about the context of the issue.
  The questions are about what is important to them in domain of the issue.
+ Only write the questions and don't include any other text.
  
  Issue: {issue}
 
