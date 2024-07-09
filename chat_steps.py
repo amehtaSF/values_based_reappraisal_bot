@@ -1,7 +1,7 @@
 import yaml
 from openai import OpenAI
 
-with open('chat_flow_5.yaml') as f:
+with open('chat_flow.yaml') as f:
     chat_flow = yaml.safe_load(f)
 
 MODEL = 'gpt-4o-2024-05-13'
