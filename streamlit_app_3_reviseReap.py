@@ -5,7 +5,7 @@ import yaml
 import os
 from utils import handle_chat
 import json
-from chat_steps_3_reviseReap import SolicitIssue, VerifyIssue, SolicitValues, OfferReappraisal
+from chat_steps_3_reviseReap import SolicitIssue, OfferReappraisal
 
 
 
