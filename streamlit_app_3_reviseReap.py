@@ -10,7 +10,9 @@ from chat_steps_3_reviseReap import SolicitIssue, VerifyIssue, SolicitValues, Of
 
 
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+
+
 MODEL = 'gpt-4o-2024-05-13'
 
 with open('chat_flow_3_reviseReap.yaml') as f:
@@ -21,7 +23,7 @@ with open('issue_question.md') as f:
 
 st.title("VBR Bot")
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 chat_steps = {"solicit_issue": SolicitIssue,  
               "offer_reappraisal": OfferReappraisal}
