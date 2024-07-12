@@ -27,4 +27,4 @@ Your issue could be in any of the following domains.
 *   **Social/political issues** - related to any social, political, or moral concerns pertaining to broader society.
 *   **Personal growth** \- Related to areas of inner personal growth, such as emotional maturity, resilience, or self-control.
 
-Please write a few sentences about the issue directly in the text box below. Do not copy/paste anything into the text box.
+Please write a few sentences about the issue directly in the text box below.

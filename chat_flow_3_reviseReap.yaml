@@ -1,0 +1,1292 @@
+# top level key is the name of the step in the chat flow
+# within top level keys there can be: process_input, asst_msg, process_response, and direct_next
+
+# [
+#     {
+#         "value": "connection",
+#         "description": "Valuing connection means prioritizing relationships and genuine interactions with others. It involves actively nurturing and appreciating emotional ties, communication, and mutual support in a variety of contexts in one's life."
+#     },
+#     {
+#         "value": "interpersonal harmony",
+#         "description": "Valuing interpersonal harmony means prioritizing peaceful and respectful relationships, often striving to avoid conflict and foster understanding among individuals. It involves being considerate of others' feelings and perspectives to maintain a positive social environment."
+#     },
+#     {
+#         "value": "collaboration",
+#         "description": "Valuing collaboration means recognizing and appreciating the importance of working together with others to achieve common goals, leveraging diverse skills and perspectives. It involves fostering a culture of communication, mutual respect, and shared responsibility to enhance collective effectiveness and innovation."
+#     },
+#     {
+#         "value": "community",
+#         "description": "Valuing community means recognizing and prioritizing the importance of collective well-being, mutual support, and shared goals over individual interests. It involves actively contributing to and participating in communal activities and initiatives that enhance the collective quality of life."
+#     },
+#     {
+#         "value": "integrity",
+#         "description": "Valuing integrity means prioritizing ethical behavior and strong moral principles above all other considerations. It involves consistently adhering to moral principles, even when it is challenging or inconvenient."
+#     },
+#     {
+#         "value": "honesty",
+#         "description": "Valuing honesty means prioritizing truthfulness even when it is difficult or inconvenient. It involves being transparent and trustworthy regardless of the consequences."
+#     },
+#     {
+#         "value": "perseverance",
+#         "description": "Valuing perseverance means appreciating the importance of persistent effort and resilience in the face of challenges, rather than giving up. It involves consistently striving towards goals despite obstacles, setbacks, and delays."
+#     },
+#     {
+#         "value": "self-control",
+#         "description": "Valuing self-control means prioritizing the ability to regulate one's behaviors, thoughts, and emotions in the face of temptations and impulses. It involves making conscious choices that align with long-term goals rather than succumbing to immediate gratifications."
+#     },
+#     {
+#         "value": "benevolence",
+#         "description": "Valuing benevolence means prioritizing kindness, compassion, and goodwill towards others in your actions and decisions. It involves a genuine desire to contribute positively to the well-being of individuals and society."
+#     },
+#     {
+#         "value": "justice",
+#         "description": "Valuing Justice means prioritizing fairness in all actions and decisions, ensuring that laws and actions are applied impartially. It involves a commitment to addressing and rectifying injustices in society, fostering a culture of accountability and ethical behavior."
+#     },
+#     {
+#         "value": "patriotism",
+#         "description": "Valuing patriotism means holding a deep respect and love for one's country, including its cultural heritage, values, and principles. It also involves a commitment to the nation's well-being and active participation in civic duties to support and improve the country."
+#     },
+#     {
+#         "value": "family",
+#         "description": "Valuing family means prioritizing the principles, traditions, and responsibilities that uphold the well-being and unity of the family unit. It involves fostering strong relationships, mutual respect, and commitment to supporting and caring for one another."
+#     },
+#     {
+#         "value": "tradition",
+#         "description": "Valuing tradition means appreciating and preserving customs, beliefs, and practices passed down through generations. It involves recognizing the importance of cultural heritage and maintaining continuity with the past."
+#     },
+#     {
+#         "value": "conformity",
+#         "description": "Valuing conformity means prioritizing adherence to social norms, rules, and expectations, often to maintain harmony and cohesion within a group. It emphasizes the importance of fitting in and aligning one's behavior and beliefs with those of the majority or authority."
+#     },
+#     {
+#         "value": "power",
+#         "description": "Valuing power means prioritizing the ability to influence, lead, and command people and situations. It often involves seeking positions or taking actions that enhance one's capacity to shape outcomes, exert influence, and assert one's authority."
+#     },
+#     {
+#         "value": "duty",
+#         "description": "Valuing duty means prioritizing the responsibilities and obligations of one's role, even when it requires personal sacrifices. It involves readiness to commit oneself to a goal which extends beyond their own personal goals."
+#     },
+#     {
+#         "value": "activism",
+#         "description": "Valuing activism means appreciating efforts to advocate for social, political, or environmental change. It involves recognizing the personal responsiblity one has in taking action to shape one's society."
+#     },
+#     {
+#         "value": "internal peace",
+#         "description": "Valuing internal peace means prioritizing a harmonious and balanced inner state, free from internal conflict and turmoil. It involves cultivating a mindset and lifestyle that promote mental clarity, self-acceptance, and harmony, regardless of external chaos or challenges."
+#     },
+#     {
+#         "value": "health",
+#         "description": "Valuing health means prioritizing physical, mental, and emotional well-being through practices such as regular exercise, balanced nutrition, and stress management. It also involves making informed choices that promote long-term vitality and prevent illness."
+#     },
+#     {
+#         "value": "wealth",
+#         "description": "Valuing wealth means prioritizing the accumulation and preservation of financial assets and resources. It often involves making decisions that aim to enhance one's economic standing and viewing monetary success as a key indicator of personal achievement and security."
+#     },
+#     {
+#         "value": "status",
+#         "description": "Valuing status means placing importance on one's social standing, prestige, and recognition by others. It often involves seeking admiration, respect, and validation through achievements, possessions, or associations."
+#     },
+#     {
+#         "value": "luxury",
+#         "description": "Valuing luxury means appreciating and seeking high-quality, premium goods and experiences that often come with a significant cost. It emphasizes a preference for exclusivity, craftsmanship, and indulgence, often as a marker of status or personal reward."
+#     },
+#     {
+#         "value": "success",
+#         "description": "Valuing success means prioritizing achievements as a central aspect of one's life, often measuring well-being and self-worth through accomplishments. It entails a strong focus on attaining specific outcomes and recognizing the hard work, determination, and perseverance required to reach them."
+#     },
+#     {
+#         "value": "pleasure",
+#         "description": "Valuing pleasure means prioritizing experiences and activities that bring enjoyment and satisfaction. It involves seeking out and cherishing moments of joy and comfort while often aiming to minimize pain and discomfort."
+#     },
+#     {
+#         "value": "environmentalism",
+#         "description": "Valuing environmentalism means prioritizing the protection and preservation of the natural world, recognizing its intrinsic worth and the necessity of sustainable practices for the health of our planet. It involves advocating for policies and behaviors that reduce environmental impact, conserve resources, and promote biodiversity."
+#     },
+#     {
+#         "value": "spirituality",
+#         "description": "Valuing spirituality means prioritizing inner growth via a connection to something greater than oneself, such as a higher power or universal consciousness. It involves seeking meaning, purpose, and a sense of peace through practices like meditation, prayer, or self-reflection."
+#     },
+#     {
+#         "value": "diversity",
+#         "description": "Valuing diversity means appreciating and respecting the differences between people, including differences in backgrounds, perspectives, and abilities. It also involves actively promoting an inclusive culture where people feel empowered to contribute their unique strengths."
+#     },
+#     {
+#         "value": "equality",
+#         "description": "Valuing equality means recognizing and promoting the fair treatment and opportunities for all individuals, regardless of their differences such as race, gender, socioeconomic status, or other characteristics. It involves actively challenging and addressing systemic inequities and biases to ensure everyone has an equal chance to succeed and thrive."
+#     },
+#     {
+#         "value": "wisdom",
+#         "description": "Valuing wisdom means prioritizing the pursuit of insight, discernment, and sound judgment in decision-making and life choices. It involves seeking knowledge and experiences that foster personal growth, ethical behavior, and the well-being of oneself and others."
+#     },
+#     {
+#         "value": "autonomy",
+#         "description": "Valuing autonomy means prioritizing and respecting an individual's right to make their own decisions and govern their own actions. It emphasizes the importance of independence and self-determination in one's personal and professional life."
+#     },
+#     {
+#         "value": "stability",
+#         "description": "Valuing stability means prioritizing consistency, reliability, and predictability in various aspects of life, such as personal relationships, professional environments, and financial situations. It involves seeking environments and decisions that minimize risk and uncertainty to ensure a steady, predictable course of action."
+#     },
+#     {
+#         "value": "safety",
+#         "description": "Valuing safety means prioritizing the protection of oneself, one's loved ones, and one's community from harm. It involves continuously assessing and mitigating potential dangers to promote well-being and peace of mind."
+#     },
+#     {
+#         "value": "drive",
+#         "description": "Valuing drive means appreciating the determination and motivation that propel individuals to achieve challenging goals. It means placing high importance on perseverance, ambition, and the proactive pursuit of success in personal and professional endeavors."
+#     },
+#     {
+#         "value": "creativity",
+#         "description": "Valuing creativity means recognizing and appreciating the importance of original thinking and innovation. It involves recognizing the role of thinking out of the box in fostering progress, and enriching various aspects of life."
+#     },
+#     {
+#         "value": "stimulation",
+#         "description": "Valuing stimulation means seeking out experiences that are exciting, novel, and challenging. It reflects a desire for variety and dynamic activities that keep life interesting."
+#     },
+#     {
+#         "value": "competency",
+#         "description": "Valuing competency means prioritizing and appreciating skills, expertise, and the ability to perform tasks effectively and efficiently. It involves respecting individuals who demonstrate proficiency in their respective fields and consistently seeking to acquire mastery in one's own pursuits."
+#     },
+#     {
+#         "value": "growth",
+#         "description": "Valuing growth means prioritizing continuous personal and professional development, striving to improve in all domains of life. It involves embracing challenges, learning from experiences, and seeking opportunities for advancement."
+#     }
+# ]
+verify_issue:
+  listener: 
+    temperature: .5
+    gpt: >
+      Look at the description of the issue the user described.
+      In any issue, there are often several separable facets that cause the negative emotion to arise. 
+      I want you to as concisely as possible, 
+      summarize what are the facets that give rise to the negative emotion.
+      Rephrase the sentences to be in different words than the user provided.
+      At the end, propose a few potential emotions the user might feel and 
+      ask them if they feel those emotions.
+      
+      Do not invent any information the user did not provide.
+      Do not try to guess any external circumstances unless they have been explicitly stated.
+      Only include the description of what's making the person feel bad and the question about the emotions.
+      Do not use bullet points. 
+      
+      <possible emotions>
+      Calm
+      relaxed
+      at ease
+      at peace
+      comforted
+      comfortable
+      complacent
+      Fortunate
+      lucky
+      blessed
+      Joyful
+      elated
+      blissful
+      cheerful
+      delighted
+      ecstatic
+      enthusiastic
+      Appreciative
+      grateful
+      beholden
+      Pleased
+      proud
+      confident
+      fulfilled
+      Able
+      competent
+      capable
+      clever
+      effective
+      Deserving
+      worthy
+      admirable
+      Vigorous
+      active
+      adventurous
+      alert
+      alive
+      ambitious
+      animated
+      bubbly
+      Cared for
+      loved
+      accepted
+      adored
+      appreciated
+      attached
+      bonded
+      cherished
+      Caring
+      loving
+      accepting
+      adoring
+      affectionate
+      comforting
+      compassionate
+      considerate
+      devoted
+      composed
+      contented
+      cozy
+      mellow
+      peaceful
+      fortunate
+      euphoric
+      exhilarated
+      exultant
+      fantastic
+      glad
+      indebted
+      honored
+      satisfied
+      experienced
+      fit
+      intelligent
+      entitled
+      daring
+      dynamic
+      energetic
+      forceful
+      free
+      invigorated
+      desired
+      important
+      included
+      needed
+      protected
+      prized
+      empathic
+      fond
+      forgiving
+      gentle
+      giving
+      helpful
+      interested
+      relieved
+      rested
+      safe
+      serene
+      soothed
+      privileged
+      gleeful
+      happy
+      hopeful
+      jubilant
+      lighthearted
+      obliged
+      successful
+      triumphant
+      knowledgeable
+      proficient
+      skilled
+      justified
+      lively
+      reckless
+      refreshed
+      renewed
+      revitalized
+      spirited
+      respected
+      secure
+      supported
+      treasured
+      trusted
+      understood
+      kind
+      nice
+      protective
+      receptive
+      responsive
+      sensitive
+      sorry
+      stress-free
+      tranquil
+      unruffled
+      well-off
+      optimistic
+      overjoyed
+      thrilled
+      thankful
+      victorious
+      successful
+      talented
+      praiseworthy
+      strong
+      vibrant
+      vivacious
+      wild
+      valued
+      wanted
+      worshipped
+      sympathetic
+      tender
+      thoughtful
+      understanding
+      warm
+      Completed
+      finished
+      accomplished
+      Enthused
+      inspired
+      eager
+      encouraged
+      enlightened
+      enriched
+      concluded
+      excited
+      galvanized
+      impassioned
+      done
+      impressed
+      motivated
+      moved
+      stubborn
+      immobilized
+      numb
+      shaken
+      speechless
+      paralyzed
+      panicky
+      nervous
+      on edge
+      restless
+      tense
+      repulsed
+      revolted
+      perturbed
+      troubled
+      rattled
+      scared
+      disparaging
+      disrespectful
+      irate
+      irked
+      irritated
+      livid
+      mad
+      fulfilled
+      stimulated
+      stirred
+      uplifted
+      tenacious
+      startled
+      stunned
+      taken aback
+      stressed
+      uptight
+      worried
+      uneasy
+      unnerved
+      wound up
+      turned off
+      troubled
+      unbalanced
+      unhappy
+      terrified
+      scornful
+      superior
+      miffed
+      outraged
+      pissed off
+      provoked
+      ticked off
+      Determined
+      persistent
+      compelled
+      driven
+      Surprised
+      shocked
+      alarmed
+      amazed
+      astonished
+      astounded
+      obstinate
+      persevering
+      at a loss
+      awestruck
+      flabbergasted
+      horrified
+      Overwhelmed
+      overcome
+      dazed
+      intimidated
+      Anxious
+      nervous
+      agitated
+      apprehensive
+      edgy
+      fidgety
+      frantic
+      Disgusted
+      sickened
+      appalled
+      nauseated
+      Bothered
+      upset
+      annoyed
+      burdened
+      concerned
+      dismayed
+      Afraid
+      frightened
+      fearful
+      out of control
+      in over your head
+      fretful
+      ill at ease
+      insecure
+      jumpy
+      jittery
+      offended
+      repelled
+      distressed
+      distraught
+      disturbed
+      petrified
+      Contemptuous
+      scornful
+      condescending
+      derisive
+      Angry
+      annoyed
+      aggravated
+      cross
+      enraged
+      exasperated
+      frustrated
+      fuming
+      disapproving
+      disdainful
+      furious
+      heated
+      incensed
+      indignant
+      infuriated
+      Helpless
+      powerless
+      defenseless
+      Sad
+      depressed
+      blue
+      distraught
+      defeated
+      dejected
+      demoralized
+      desolate
+      despondent
+      dependent
+      discouraged
+      disheartened
+      down
+      empty
+      forlorn
+      gloomy
+      glum
+      feeble
+      grieving
+      hopeless
+      low
+      melancholic
+      miserable
+      morose
+      mournful
+      dishonored
+      exposed
+      humbled
+      regretful
+      remorseful
+      pathetic
+      powerless
+      small
+      stupid
+      unable
+      unacceptable
+      unfit
+      sleepy
+      sluggish
+      under the weather
+      washed out
+      resigned
+      run down
+      mixed up
+      muddled
+      mystified
+      perplexed
+      torn
+      uncertain
+      vulnerable
+      pessimistic
+      somber
+      sorrowful
+      tearful
+      unhappy
+      woeful
+      wretched
+      humiliated
+      mortified
+      scorned
+      sorry
+      to blame
+      unimportant
+      unqualified
+      unworthy
+      useless
+      worthless
+      weary
+      wiped out
+      worn out
+      unconcerned
+      uninterested
+      puzzled
+      stuck
+      tangled
+      undecided
+      unsure
+      Shamed
+      embarrassed
+      ashamed
+      chastened
+      crestfallen
+      defamed
+      Guilty
+      remorseful
+      culpable
+      apologetic
+      at fault
+      degraded
+      discredited
+      disgraced
+      bad
+      blameworthy
+      in the wrong
+      Inadequate
+      incompetent
+      deficient
+      impaired
+      imperfect
+      incapable
+      incompetent
+      ineffective
+      inefficient
+      Fatigued
+      tired
+      beat
+      below par
+      done for
+      done in
+      Apathetic
+      indifferent
+      bored
+      dispirited
+      lazy
+      Confused
+      puzzled
+      baffled
+      befuddled
+      bewildered
+      clouded
+      inept
+      inferior
+      insignificant
+      insufficient
+      lacking
+      laughable
+      not enough
+      drained
+      exhausted
+      pooped
+      run down
+      lethargic
+      listless
+      lukewarm
+      disorganized
+      doubtful
+      flustered
+      in disarray
+      Ambivalent
+      conflicted
+      at odds
+      mixed
+      hesitant
+      of two minds
+      indecisive
+      Hurt
+      betrayed
+      accused
+      belittled
+      blamed
+      cheated
+      criticized
+      crushed
+      disappointed
+      forsaken
+      judged
+      injured
+      let down
+      mistreated
+      victimized
+      willful
+      preoccupied
+      homesick
+      ignored
+      in the way
+      isolated
+      left out
+      lonesome
+      lost
+      intruded upon
+      maltreated
+      mistreated
+      molested
+      paranoid
+      suspicious
+      reluctant
+      wary
+      overlooked
+      pained
+      put down
+      wounded
+      neglected
+      overlooked
+      rejected
+      uncared for
+      unpopular
+      unwanted
+      unwelcome
+      overpowered
+      pushed around
+      put upon
+      used
+      Obstinate
+      immovable
+      inflexible
+      intractable
+      Obsessive
+      compulsive
+      fanatical
+      fixated
+      Lonely
+      unloved
+      abandoned
+      alienated
+      alone
+      apart
+      burdensome
+      cut off
+      deserted
+      Abused
+      bullied
+      battered
+      controlled
+      dominated
+      exploited
+      harmed
+      Jealous
+      envious
+      bitter
+      covetous
+      neurotic
+      possessed
+      desolate
+      discounted
+      disliked
+      distant
+      excluded
+      forlorn
+      friendless
+      hurt
+      ill-treated
+      injured
+      intimidated
+      desirous
+      Mistrustful
+      suspicious
+      cautious
+      hesitant
+      guarded
+      inhibited
+
+      </possible emotions>
+
+      <example>
+      <issue>
+      My adult daughter has been having a problem with alcohol.
+      She has been drinking almost everyday and sometimes to the point of passing out.
+      I have talked to her about it and she wants to be sober, 
+      so I'm having her track how many days she does not drink and 
+      I have provided her with a list of AA meetings in her area.  
+      I will continue to follow with her on her progress.</issue>
+      <response>
+      Your adult daughter drinks excessively. You are concerned for her well-being and safety.
+
+      It sounds like you might feel worried and anxious, is that right? Do you feel any other emotions?
+
+      </response>
+      </example>
+      
+      <example>
+      <issue>
+      Seeing my aunt and grandmother both suffering from Frontal Lobe Dementia. 
+      It is something that has been disheartening to watch and very frequent on my mind. 
+      I hate seeing someone I know and love go through this and 
+      hate that I am one to lose patience with them when they forget who I am and 
+      other family members or have a normal conversation then 
+      ten minutes later not even remember what we could have talked about. 
+      It's like someone is missing but they still are standing right in front of you. 
+      It is also hard when they need help to do things and 
+      I am not always in the bes shape to help out like giving them showers and 
+      baths because you have to have a lot of strength to do it sometimes and 
+      there are many days where I am just not up to par.
+      </issue>
+      <response>
+      Your aunt and grandmother are suffering from Frontal Lobe Dementia and
+       it is painful to watch them suffer.
+       You feel ashamed that you sometimes lose patience with them. 
+       You feel like you are not always able to help them as much as you would like.
+
+      It sounds like you might feel sad, frustrated, and guilty, is that right? Do you feel any other emotions?
+      </response>
+      </example>
+      
+      <example>
+      <issue>
+      Lately I have been feeling down and potentially depressed 
+      about not having enough money to do the things I want and 
+      not being able to pay bills on time. 
+      I recently had to resort to paying bills using my credit card and 
+      recently have been behind on those. 
+      I am able to just pay the monthly fees only. 
+      Which I already knew was a bad thing to start doing. 
+      Now it is the fact I rely on credit card to pay for everything because 
+      my whole paycheck goes to my credit card payback but 
+      still haven't caught up yet and 
+      I am in the second month of doing this 
+      I feel as though things are really piling up and 
+      don't know what I am going to do to dig myself 
+      out of the hole I feel that I am currently digging.
+      </issue>
+      <response>
+      You don't have money to do what you want or pay bills on time.
+      You are not able to pay down your debt due to monthly fees.
+      You feel as though you don't know what to do and will 
+
+      It sounds like you might feel overwhelmed, fearful, and hopeless, is that right? Do you feel any other emotions?
+
+      </response>
+      </example>
+
+ 
+  
+  speaker:
+    temperature: .1
+    gpt: >
+      If the user has confirmed that the summary fully and correctly captures the issue in their final message, 
+      then return 1.
+      If the user has suggested a change or addition, then return 0.
+      Do not return anything except 1 or 0.
+    asst_msg: |
+      {gpt_output}
+
+      Does this fully and correctly capture the issue? Is there anything you would like to add or change?
+        
+solicit_values:
+  speaker:
+    temperature: 0.8
+    gpt: >
+      Read about the issue the user is facing and generate questions to ask the person
+      that will help surmise what are their values in the domain in which the issue lies. 
+      Think about what is the domain in which there issue lies first 
+      and then generate questions to get at their values in that domain.
+      Generate questions that are relatively broad and not just about the issue itself.
+      Values refer to what is important to them in that domain. 
+      By domain, we mean things like "work", "family", "finance", "health", etc.
+      What do they care about in that domain?
+      Come up with 3 to 5 questions. 
+      The questions should not be about the context of the issue.
+      The questions are about what is important to them in domain of the issue.
+      Only write the questions as a json list and don't include any other text.
+
+offer_reappraisal:
+  speaker:
+    temperature: 0.8
+    gpt_general_reappraisal: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal for them.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better.
+      Write 3 sentences.
+      
+    gpt_all_values: >
+      Read this issue that someone is facing and the description of their values, 
+      and generate a cognitive reappraisal for them.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better, given their values.
+      Do not talk about their values explicitly, just consider them when you generate your response. 
+      Write 3 sentences.
+      Every sentence should be responsive to their values without explicitly mentioning 
+      that it is their values.
+
+      Values: {user_values}
+
+    gpt_value_reappraisal: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values {value}.
+      {description}
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of {value}.
+      Write 3 sentences.
+
+    gpt_connection: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values connection.
+      Valuing connection means prioritizing relationships and 
+      genuine interactions with others. 
+      It involves actively nurturing and appreciating emotional ties, 
+      communication, and mutual support in a variety of contexts in one's life.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of connection.
+      Write 3 sentences.
+
+    gpt_growth: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values growth.
+      Valuing growth means prioritizing continuous personal and professional development,
+      striving to improve in all domains of life. 
+      It involves embracing challenges, learning from experiences, and 
+      seeking opportunities for advancement.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of growth.
+      Write 3 sentences.
+
+    gpt_health: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values health.
+      Valuing health means prioritizing physical, mental, and 
+      emotional well-being through practices such as regular exercise, 
+      balanced nutrition, and stress management. 
+      It also involves making informed choices that promote long-term vitality and 
+      prevent illness.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of health.
+      Write 3 sentences.
+
+    gpt_interpersonal_harmony: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values interpersonal harmony.
+      Valuing interpersonal harmony means prioritizing peaceful and respectful relationships,
+      often striving to avoid conflict and foster understanding among individuals.
+      It involves being considerate of others' feelings and perspectives to maintain
+      a positive social environment.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of interpersonal harmony.
+      Write 3 sentences.
+
+    gpt_collaboration: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values collaboration.
+      Valuing collaboration means recognizing and appreciating the importance of working together
+      with others to achieve common goals, leveraging diverse skills and perspectives.
+      It involves fostering a culture of communication, mutual respect, and shared responsibility
+      to enhance collective effectiveness and innovation.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of collaboration.
+      Write 3 sentences.
+
+    gpt_community: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values community.
+      Valuing community means recognizing and prioritizing the importance of collective well-being,
+      mutual support, and shared goals over individual interests.
+      It involves actively contributing to and participating in communal activities 
+      and initiatives that enhance the collective quality of life.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of community.
+      Write 3 sentences.
+
+    gpt_integrity: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values integrity.
+      Valuing integrity means prioritizing ethical behavior and strong moral principles
+      above all other considerations.
+      It involves consistently adhering to moral principles, even when it is challenging or inconvenient.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of integrity.
+      Write 3 sentences.
+
+    gpt_honesty: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values honesty.
+      Valuing honesty means prioritizing truthfulness even when it is difficult or inconvenient.
+      It involves being transparent and trustworthy regardless of the consequences.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of honesty.
+      Write 3 sentences.
+
+    gpt_perseverance: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values perseverance.
+      Valuing perseverance means appreciating the importance of persistent effort and resilience
+      in the face of challenges, rather than giving up.
+      It involves consistently striving towards goals despite obstacles, setbacks, and delays.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of perseverance.
+      Write 3 sentences.
+
+    gpt_self_control: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values self-control.
+      Valuing self-control means prioritizing the ability to regulate one's behaviors, thoughts,
+      and emotions in the face of temptations and impulses.
+      It involves making conscious choices that align with long-term goals
+      rather than succumbing to immediate gratifications.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of self-control.
+      Write 3 sentences.
+
+    gpt_benevolence: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values benevolence.
+      Valuing benevolence means prioritizing kindness, compassion, and goodwill towards others
+      in your actions and decisions.
+      It involves a genuine desire to contribute positively to the well-being of individuals and society.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of benevolence.
+      Write 3 sentences.
+
+    gpt_justice: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values justice.
+      Valuing justice means prioritizing fairness in all actions and decisions, ensuring that laws
+      and actions are applied impartially.
+      It involves a commitment to addressing and rectifying injustices in society, fostering a culture
+      of accountability and ethical behavior.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of justice.
+      Write 3 sentences.
+
+    gpt_patriotism: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values patriotism.
+      Valuing patriotism means holding a deep respect and love for one's country, including its cultural
+      heritage, values, and principles.
+      It also involves a commitment to the nation's well-being and active participation in civic duties
+      to support and improve the country.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of patriotism.
+      Write 3 sentences.
+
+    gpt_family: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values family.
+      Valuing family means prioritizing the principles, traditions, and responsibilities that uphold
+      the well-being and unity of the family unit.
+      It involves fostering strong relationships, mutual respect, and commitment to supporting
+      and caring for one another.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of family.
+      Write 3 sentences.
+
+    gpt_tradition: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values tradition.
+      Valuing tradition means appreciating and preserving customs, beliefs, and practices passed down
+      through generations.
+      It involves recognizing the importance of cultural heritage and maintaining continuity with the past.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of tradition.
+      Write 3 sentences.
+
+    gpt_conformity: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values conformity.
+      Valuing conformity means prioritizing adherence to social norms, rules, and expectations,
+      often to maintain harmony and cohesion within a group.
+      It emphasizes the importance of fitting in and aligning one's behavior and beliefs
+      with those of the majority or authority.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of conformity.
+      Write 3 sentences.
+
+    gpt_internal_peace: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values internal peace.
+      Valuing internal peace means prioritizing a state of inner calm, tranquility, and emotional balance
+      despite external circumstances.
+      It involves practices that cultivate mindfulness, acceptance, and a sense of inner security.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of internal peace.
+      Write 3 sentences.
+    
+    gpt_competency: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values competency.
+      Valuing competency means prioritizing and appreciating skills, expertise,
+      and the ability to perform tasks effectively and efficiently.
+      It involves respecting individuals who demonstrate proficiency in their respective fields
+      and consistently seeking to acquire mastery in one's own pursuits.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of competency.
+      Write 3 sentences.
+    
+    gpt_spirituality: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values spirituality.
+      Valuing spirituality means prioritizing inner growth via a connection to something greater than oneself,
+       such as a higher power or universal consciousness. 
+       It involves seeking meaning, purpose, and a sense of peace through practices like meditation, prayer, or self-reflection.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of spirituality.
+      Write 3 sentences.
+    
+    gpt_diversity: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values diversity.
+      Valuing diversity means appreciating and respecting the differences between people,
+       including differences in backgrounds, perspectives, and abilities. 
+       It also involves actively promoting an inclusive culture where people feel empowered to contribute their unique strengths.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of diversity.
+      Write 3 sentences.
+
+    gpt_equality: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values equality.
+      Valuing equality means recognizing and promoting the fair treatment and opportunities for all individuals, 
+      regardless of their differences such as race, gender, socioeconomic status, or other characteristics. 
+      It involves actively challenging and addressing systemic inequities and biases to ensure everyone has an equal chance to succeed and thrive.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of equality.
+      Write 3 sentences.
+
+    gpt_wisdom: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values wisdom.
+      Valuing wisdom means prioritizing the pursuit of insight, discernment, and sound judgment in decision-making and life choices. 
+      It involves seeking knowledge and experiences that foster personal growth, ethical behavior, and the well-being of oneself and others.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of wisdom.
+      Write 3 sentences.
+
+    gpt_autonomy: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values autonomy.
+      Valuing autonomy means prioritizing and respecting an individual's right to make their own decisions and govern their own actions. 
+      It emphasizes the importance of independence and self-determination in one's personal and professional life.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of autonomy.
+      Write 3 sentences.
+    
+    gpt_stability: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values stability.
+      Valuing stability means prioritizing consistency, reliability, and predictability in various aspects of life, 
+      such as personal relationships, professional environments, and financial situations. 
+      It involves seeking environments and decisions that minimize risk and uncertainty to ensure a steady, predictable course of action.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of stability.
+      Write 3 sentences.
+
+    gpt_safety: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values safety.
+      Valuing safety means prioritizing the protection of oneself, one's loved ones, and one's community from harm. 
+      It involves continuously assessing and mitigating potential dangers to promote well-being and peace of mind.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of safety.
+      Write 3 sentences.
+
+    gpt_drive: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values drive.
+      Valuing drive means appreciating the determination and motivation that propel individuals to achieve challenging goals. 
+      It means placing high importance on perseverance, ambition, and the proactive pursuit of success in personal and professional endeavors.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of drive.
+      Write 3 sentences.
+
+    gpt_creativity: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values creativity.
+      Valuing creativity means recognizing and appreciating the importance of original thinking and innovation. 
+      It involves recognizing the role of thinking out of the box in fostering progress, and enriching various aspects of life.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of creativity.
+      Write 3 sentences.
+
+    gpt_stimulation: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values stimulation.
+      Valuing stimulation means seeking out experiences that are exciting, novel, and challenging. 
+      It reflects a desire for variety and dynamic activities that keep life interesting.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of stimulation.
+      Write 3 sentences.
+
+    gpt_competency: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values competency.
+      Valuing competency means prioritizing and appreciating skills, expertise, and the ability to perform tasks effectively and efficiently. 
+      It involves respecting individuals who demonstrate proficiency in their respective fields and consistently seeking to acquire mastery in one's own pursuits.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of competency.
+      Write 3 sentences.
+
+    gpt_hedonism: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values hedonism.
+      Valuing hedonism means prioritizing pleasure, enjoyment, and the pursuit of happiness in life. 
+      It involves seeking out experiences that are pleasurable and satisfying, often focusing on immediate gratification and comfort.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of hedonism.
+      Write 3 sentences.
+    
+    gpt_self_expression: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values self-expression.
+      Valuing self-expression means prioritizing the ability to communicate one's thoughts, feelings, and identity freely and authentically. 
+      It involves embracing creativity, individuality, and personal style as a means of self-discovery and self-actualization.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of self-expression.
+      Write 3 sentences.
+
+    gpt_independence: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values independence.
+      Valuing independence means prioritizing self-reliance, autonomy, and freedom from external control or influence. 
+      It involves making decisions and taking actions based on one's own judgment and preferences, rather than relying on others.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of independence.
+      Write 3 sentences.
+
+    gpt_security: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values security.
+      Valuing security means prioritizing safety, stability, and protection from harm or danger. 
+      It involves seeking out environments, relationships, and situations that provide a sense of predictability and well-being.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of security.
+      Write 3 sentences.
+
+
+
+    gpt_strength_weakness: >
+      Read the issue  and the cognitive reappraisal. 
+      This cognitive reappraisal is intended to relate to the value of "{value}". 
+      {description}
+      
+      Sometimes the reappraisal for an issue fits really well with a particular value. 
+      The reappraisal really speaks to a person with that value and 
+      is likely to be very effective for someone with that value. 
+      Other times, a reappraisal can be written to relate to a value, 
+      but it's like a square peg in a round hole. 
+      Perhaps because the value itself is not really related to what is causing a problem for the individual. 
+      Please identify the strengths of this reappraisal as an effective reappraisal 
+      that targets the value of "{value}" and the areas where it could be improved.
+
+    gpt_new_reap: >
+      Improve the cognitive reappraisal in light of the strengths and areas for improvement.
+      Limit your reappraisal to no more than 3 sentences. Provide only the reappraisal text with no quotes or other text.
+
+
+
+  
+
+
+solicit_issue:
+  speaker:
+    gpt: >
+      The user is going to tell you about an emotional issue they are having. 
+      You need to ask questions to get a better understanding of what's going on and how the person feels. 
+
+      Some things that are good to know are:
+
+      - why different people in the story are behaving the way they are
+      - what the user thinks the outcome of the situation might be
+      - how the user feels about different aspects of the story
+      - relevant history or events leading up to the situation
+      - who are the key people involved
+      - how is the issue affecting them in various ways, both concretely and emotionally
+      - what are obstacles preventing resolution
+      - what would be a desired outcome of the situation
+
+      Some of these details may already be included. Some may be relevant and some may not be relevant. 
+      Ask the user to clarify different aspects. Only ask one question per message.
+      Do not repeat questions.
+      
+    temperature: 1
+
+
+
+assess_issue_completeness:
+  listener:
+    gpt: >
+      Read the preceding conversation and assess whether you 

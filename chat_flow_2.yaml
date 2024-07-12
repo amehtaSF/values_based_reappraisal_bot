@@ -1,38 +1,5 @@
 # top level key is the name of the step in the chat flow
 # within top level keys there can be: process_input, asst_msg, process_response, and direct_next
-solicit_issue:
-  speaker: 
-    asst_msg: >
-      Please think of an issue in your life that has been bothering you. This issue should be something that really matters to you and preferably **something that is an ongoing or recurring issue that may potentially continue to bother you in the future**. The issue could be something that is happening in the outside world, or it could be a mental or emotional pattern that is interfering with your life.  
-    
-      Some examples of relevant issues are:
-
-      *   a chronic illness of yours or of a loved one
-      *   a disagreement with someone (e.g. partner, friend, family member, neighbor, etc.) that has re-occurred or lasted more than one day
-      *   something you are dissatisfied with in your job
-      *   a trait about yourself you do not like (e.g. frequent procrastination)
-      *   a social or political issue which you care deeply about
-      *   an unwanted emotional pattern (e.g. outbursts of disproportionate anger)
-
-        
-      Your issue could be in any of the following domains.
-
-      *   **Family relations** \- related to your relationships with your family, besides marriage and parenting.
-      *   **Marriage/intimate relations** \- related to your important romantic or intimate relationships.
-      *   **Parenting** \- related to parenting.
-      *   **Friendships/social life** \- related to your friendships and other social relationships.
-      *   **Career/employment** \- related to your work.
-      *   **Finance** - related to financial troubles.
-      *   **Education/training** - related to your education or other special training like music or martial arts.
-      *   **Recreation/fun** \- including hobbies, sports, and leisure activities.
-      *   **Spirituality** \- relating to whatever spirituality means to you, whether it is as simple as communing with nature or as formal as participation in an organized religious group.
-      *   **Community life** \- relating to your community and any community service work.
-      *   **Health/physical self-care** \- related to maintaining your physical well‑being, health‑ related issues as sleep, diet, exercise, and illness.
-      *   **Environment/sustainability** \- related to caring for the planet, especially the natural environment.
-      *   **Social/political issues** - related to any social, political, or moral concerns pertaining to broader society.
-      *   **Personal growth** \- Related to areas of inner personal growth, such as emotional maturity, resilience, or self-control.
-
-      Please write a few sentences about the issue directly in the text box below. Do not copy/paste anything into the text box.
 
 verify_issue:
   listener: 
@@ -693,9 +660,16 @@ solicit_values:
 offer_reappraisal:
   speaker:
     temperature: 0.8
-    gpt: >
+    gpt_general_reappraisal: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal for them.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better.
+      Write 3 sentences.
+      
+    gpt_all_values: >
       Read this issue that someone is facing and the description of their values, 
-      and I want you to generate a cognitive reappraisal for them.
+      and generate a cognitive reappraisal for them.
       Do not try to solve the problem and do not tell the person what to do.
       Just help them see it in a way that will help them feel better, given their values.
       Do not talk about their values explicitly, just consider them when you generate your response. 
@@ -705,7 +679,275 @@ offer_reappraisal:
 
       Values: {user_values}
 
+    gpt_connection: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values connection.
+      Valuing connection means prioritizing relationships and 
+      genuine interactions with others. 
+      It involves actively nurturing and appreciating emotional ties, 
+      communication, and mutual support in a variety of contexts in one's life.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of connection.
+      Write 3 sentences.
+
+    gpt_growth: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values growth.
+      Valuing growth means prioritizing continuous personal and professional development,
+      striving to improve in all domains of life. 
+      It involves embracing challenges, learning from experiences, and 
+      seeking opportunities for advancement.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of growth.
+      Write 3 sentences.
+    
+    gpt_spirituality: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values spirituality.
+      Valuing spirituality means prioritizing inner growth via a connection to something greater than oneself,
+       such as a higher power or universal consciousness. 
+       It involves seeking meaning, purpose, and a sense of peace through practices like meditation, prayer, or self-reflection.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of spirituality.
+      Write 3 sentences.
+
+    gpt_health: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values health.
+      Valuing health means prioritizing physical, mental, and 
+      emotional well-being through practices such as regular exercise, 
+      balanced nutrition, and stress management. 
+      It also involves making informed choices that promote long-term vitality and 
+      prevent illness.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of health.
+      Write 3 sentences.
+
+    gpt_interpersonal_harmony: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values interpersonal harmony.
+      Valuing interpersonal harmony means prioritizing peaceful and respectful relationships,
+      often striving to avoid conflict and foster understanding among individuals.
+      It involves being considerate of others' feelings and perspectives to maintain
+      a positive social environment.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of interpersonal harmony.
+      Write 3 sentences.
+
+    gpt_collaboration: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values collaboration.
+      Valuing collaboration means recognizing and appreciating the importance of working together
+      with others to achieve common goals, leveraging diverse skills and perspectives.
+      It involves fostering a culture of communication, mutual respect, and shared responsibility
+      to enhance collective effectiveness and innovation.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of collaboration.
+      Write 3 sentences.
+
+    gpt_community: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values community.
+      Valuing community means recognizing and prioritizing the importance of collective well-being,
+      mutual support, and shared goals over individual interests.
+      It involves actively contributing to and participating in communal activities 
+      and initiatives that enhance the collective quality of life.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of community.
+      Write 3 sentences.
+
+    gpt_integrity: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values integrity.
+      Valuing integrity means prioritizing ethical behavior and strong moral principles
+      above all other considerations.
+      It involves consistently adhering to moral principles, even when it is challenging or inconvenient.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of integrity.
+      Write 3 sentences.
+
+    gpt_honesty: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values honesty.
+      Valuing honesty means prioritizing truthfulness even when it is difficult or inconvenient.
+      It involves being transparent and trustworthy regardless of the consequences.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of honesty.
+      Write 3 sentences.
+
+    gpt_perseverance: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values perseverance.
+      Valuing perseverance means appreciating the importance of persistent effort and resilience
+      in the face of challenges, rather than giving up.
+      It involves consistently striving towards goals despite obstacles, setbacks, and delays.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of perseverance.
+      Write 3 sentences.
+
+    gpt_self_control: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values self-control.
+      Valuing self-control means prioritizing the ability to regulate one's behaviors, thoughts,
+      and emotions in the face of temptations and impulses.
+      It involves making conscious choices that align with long-term goals
+      rather than succumbing to immediate gratifications.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of self-control.
+      Write 3 sentences.
+
+    gpt_benevolence: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values benevolence.
+      Valuing benevolence means prioritizing kindness, compassion, and goodwill towards others
+      in your actions and decisions.
+      It involves a genuine desire to contribute positively to the well-being of individuals and society.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of benevolence.
+      Write 3 sentences.
+
+    gpt_justice: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values justice.
+      Valuing justice means prioritizing fairness in all actions and decisions, ensuring that laws
+      and actions are applied impartially.
+      It involves a commitment to addressing and rectifying injustices in society, fostering a culture
+      of accountability and ethical behavior.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of justice.
+      Write 3 sentences.
+
+    gpt_patriotism: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values patriotism.
+      Valuing patriotism means holding a deep respect and love for one's country, including its cultural
+      heritage, values, and principles.
+      It also involves a commitment to the nation's well-being and active participation in civic duties
+      to support and improve the country.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of patriotism.
+      Write 3 sentences.
+
+    gpt_family: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values family.
+      Valuing family means prioritizing the principles, traditions, and responsibilities that uphold
+      the well-being and unity of the family unit.
+      It involves fostering strong relationships, mutual respect, and commitment to supporting
+      and caring for one another.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of family.
+      Write 3 sentences.
+
+    gpt_tradition: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values tradition.
+      Valuing tradition means appreciating and preserving customs, beliefs, and practices passed down
+      through generations.
+      It involves recognizing the importance of cultural heritage and maintaining continuity with the past.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of tradition.
+      Write 3 sentences.
+
+    gpt_conformity: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values conformity.
+      Valuing conformity means prioritizing adherence to social norms, rules, and expectations,
+      often to maintain harmony and cohesion within a group.
+      It emphasizes the importance of fitting in and aligning one's behavior and beliefs
+      with those of the majority or authority.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better
+      given their value of conformity.
+      Write 3 sentences.
+
+    gpt_internal_peace: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values internal peace.
+      Valuing internal peace means prioritizing a state of inner calm, tranquility, and emotional balance
+      despite external circumstances.
+      It involves practices that cultivate mindfulness, acceptance, and a sense of inner security.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of internal peace.
+      Write 3 sentences.
+    
+    gpt_competency: >
+      Read this issue that someone is facing
+      and generate a cognitive reappraisal that would be helpful for someone
+      who really values competency.
+      Valuing competency means prioritizing and appreciating skills, expertise,
+      and the ability to perform tasks effectively and efficiently.
+      It involves respecting individuals who demonstrate proficiency in their respective fields
+      and consistently seeking to acquire mastery in one's own pursuits.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of competency.
+      Write 3 sentences.
+
+
+
   
 
 
-  
+solicit_issue:
+  speaker:
+    gpt: >
+      The user is going to tell you about an emotional issue they are having. You need to ask questions to get a better understanding of what's going on and how the person feels. 
+
+      Some things that are good to know are:
+
+      - why different people in the story are behaving the way they are
+      - what the user thinks the outcome of the situation might be
+      - how the user feels about different aspects of the story
+      - relevant history or events leading up to the situation
+      - who are the key people involved
+      - how is the issue affecting them in various ways, both concretely and emotionally
+      - what are obstacles preventing resolution
+      - what would be a desired outcome of the situation
+
+      Some of these details may already be included. Some may be relevant and some may not be relevant. Ask the user to clarify different aspects. Only ask one question per message.
+      Do not repeat questions.
+      
+    temperature: 1
+
+
+
+assess_issue_completeness:
+  listener:
+    gpt: >
+      Read the preceding conversation and assess whether you 
