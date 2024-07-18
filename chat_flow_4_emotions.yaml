@@ -1,0 +1,86 @@
+
+
+offer_reappraisal:
+  speaker:
+    temperature: 0.8
+    gpt_general_reappraisal: >
+      Read this issue that someone is facing and the emotions they feel.
+      Generate a cognitive reappraisal for them.
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better.
+      Try to address as many of the emotions and reasons for the emotions as possible 
+      while still writing a sensisble and effective reappraisal.
+      Write one or two paragraphs.
+      
+
+    gpt_value_reappraisal: >
+      Read this issue that someone is facing and the emotions they feel.
+      Generate a cognitive reappraisal that would be helpful for someone
+      who really values {value}.
+      {description}
+      Do not try to solve the problem and do not tell the person what to do.
+      Just help them see it in a way that will help them feel better 
+      given their value of {value}.
+      Try to address as many of the emotions and reasons for the emotions as possible 
+      while still writing a sensisble and effective reappraisal that will help them 
+      given their value of {value}.
+      Write one or two paragraphs.
+
+  
+
+
+solicit_issue:
+  speaker:
+    gpt: >
+      The user is going to tell you about an emotional issue they are having. 
+      You need to ask questions to get a better understanding of what's going on and how the person feels. 
+
+      Some things that are good to know are:
+
+      - why different people in the story are behaving the way they are
+      - what the user thinks the outcome of the situation might be
+      - how the user feels about different aspects of the story
+      - relevant history or events leading up to the situation
+      - who are the key people involved
+      - how is the issue affecting them in various ways, both concretely and emotionally
+      - what are obstacles preventing resolution
+      - what would be a desired outcome of the situation
+
+      Some of these details may already be included. Some may be relevant and some may not be relevant. 
+      Ask the user to clarify different aspects. Only ask one question per message.
+      Do not repeat questions.
+      
+    temperature: 1
+
+solicit_emotions:
+  speaker:
+    chat_msg: >
+      Thanks for sharing. Can you please tell me briefly why you are feeling **{emotion}**?
+    emotions:
+      - stressed
+      - worried
+      - overwhelmed
+      - concerned
+      - annoyed
+      - irritated
+      - frustrated
+      - embarrassed
+      - guilty
+      - ashamed
+      - disappointed
+      - hurt
+      - lonely
+      - sad
+      - regretful
+      - confused
+      - surprised
+      - peaceful
+      - relieved
+      - content
+      - inspired
+      - excited
+      - hopeful
+      - grateful
+      - proud
+
+
